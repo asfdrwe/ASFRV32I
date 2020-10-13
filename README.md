@@ -133,7 +133,7 @@ Use objcopy command and [freedom-bin2hex.py](https://github.com/sifive/elf2hex/b
 
   ```
 $ riscv64-unknown-elf-objcopy -O binary test test.bin
-$ freedom-bin2hex.py -w 8 test.bin test.hex
+$ python freedom-bin2hex.py -w 8 test.bin test.hex
   ```
 
 #### c example

@@ -144,7 +144,7 @@ elf形式のバイナリを1行8bit16進数のテキストファイルに変換�
 objcopyでbinaryをダンプしてfreedom-bin2hex.pyで1行8bit16進数のテキストファイルに変換します。
   ```
 $ riscv64-unknown-elf-objcopy -O binary test test.bin
-$ freedom-bin2hex.py -w 8 test.bin test.hex
+$ python freedom-bin2hex.py -w 8 test.bin test.hex
   ```
 
 ##### c言語
