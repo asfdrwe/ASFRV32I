@@ -1,6 +1,6 @@
 # riscv-tests prebuilt
-These test binaries come from (riscv-test)[https://github.com/riscv/riscv-tests] 
-and are patched with (riscv-tests.patch)[../riscv-tests.patch] for removal of
+These test binaries come from [riscv-test](https://github.com/riscv/riscv-tests) 
+and are patched with [riscv-tests.patch](../riscv-tests.patch) for removal of
 CSR and exception code.
 
 They are built by [RISC-V toolchain](https://github.com/riscv/riscv-gnu-toolchain)
