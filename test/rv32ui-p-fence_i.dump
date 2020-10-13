@@ -1,0 +1,92 @@
+
+rv32ui-p-fence_i:     ファイル形式 elf32-littleriscv
+
+
+セクション .text.init の逆アセンブル:
+
+00000000 <_start>:
+   0:	06f00693          	li	a3,111
+   4:	20001503          	lh	a0,512(zero) # 200 <begin_signature>
+   8:	20201583          	lh	a1,514(zero) # 202 <begin_signature+0x2>
+   c:	00000013          	nop
+  10:	00000013          	nop
+  14:	00000013          	nop
+  18:	00000013          	nop
+  1c:	00000013          	nop
+  20:	00000013          	nop
+  24:	00000013          	nop
+  28:	00000013          	nop
+  2c:	00000013          	nop
+  30:	00000013          	nop
+  34:	00000013          	nop
+  38:	00000013          	nop
+  3c:	00000013          	nop
+  40:	20a01223          	sh	a0,516(zero) # 204 <begin_signature+0x4>
+  44:	20b01323          	sh	a1,518(zero) # 206 <begin_signature+0x6>
+  48:	0000100f          	fence.i
+  4c:	20400793          	li	a5,516
+  50:	00078367          	jalr	t1,a5
+
+00000054 <test_2>:
+  54:	00000013          	nop
+  58:	1bc00393          	li	t2,444
+  5c:	00200193          	li	gp,2
+  60:	02769e63          	bne	a3,t2,9c <fail>
+  64:	06400713          	li	a4,100
+  68:	fff70713          	addi	a4,a4,-1
+  6c:	fe071ee3          	bnez	a4,68 <test_2+0x14>
+  70:	20a01623          	sh	a0,524(zero) # 20c <begin_signature+0xc>
+  74:	20b01723          	sh	a1,526(zero) # 20e <begin_signature+0xe>
+  78:	0000100f          	fence.i
+  7c:	00000013          	nop
+  80:	20c00793          	li	a5,524
+  84:	00078367          	jalr	t1,a5
+
+00000088 <test_3>:
+  88:	00000013          	nop
+  8c:	30900393          	li	t2,777
+  90:	00300193          	li	gp,3
+  94:	00769463          	bne	a3,t2,9c <fail>
+  98:	02301063          	bne	zero,gp,b8 <pass>
+
+0000009c <fail>:
+  9c:	0ff0000f          	fence
+  a0:	00018063          	beqz	gp,a0 <fail+0x4>
+  a4:	00119193          	slli	gp,gp,0x1
+  a8:	0011e193          	ori	gp,gp,1
+  ac:	05d00893          	li	a7,93
+  b0:	00018513          	mv	a0,gp
+  b4:	00000073          	ecall
+
+000000b8 <pass>:
+  b8:	0ff0000f          	fence
+  bc:	00100193          	li	gp,1
+  c0:	05d00893          	li	a7,93
+  c4:	00000513          	li	a0,0
+  c8:	00000073          	ecall
+  cc:	c0001073          	unimp
+  d0:	0000                	unimp
+  d2:	0000                	unimp
+  d4:	0000                	unimp
+  d6:	0000                	unimp
+  d8:	0000                	unimp
+  da:	0000                	unimp
+  dc:	0000                	unimp
+  de:	0000                	unimp
+  e0:	0000                	unimp
+  e2:	0000                	unimp
+
+セクション .data の逆アセンブル:
+
+00000200 <begin_signature>:
+ 200:	14d68693          	addi	a3,a3,333
+ 204:	0de68693          	addi	a3,a3,222
+ 208:	000307e7          	jalr	a5,t1
+ 20c:	22b68693          	addi	a3,a3,555
+ 210:	000307e7          	jalr	a5,t1
+ 214:	0000                	unimp
+ 216:	0000                	unimp
+ 218:	0000                	unimp
+ 21a:	0000                	unimp
+ 21c:	0000                	unimp
+ 21e:	0000                	unimp
