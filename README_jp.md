@@ -4,7 +4,7 @@ ASFRV32I シンプルなRISC-V RV32I実装
 Verilog 200行以下で実装したRISC-V RV32IのCPUです。
 [RISC-V Unpriviledged ISA 20191213](https://riscv.org//wp-content/uploads/2019/12/riscv-spec-20191213.pdf) に準拠しています。
 コードが短い分理解しやすいと思うのでCPUの学習の参考にしてみてください。
-ASFRV32Iの実装の詳細の解説は [ASFRV32I\_detail\_jp.md](ASFRV32I_detail_jp.md) です。
+ASFRV32Iの実装の詳細の解説は [ASFRV32I\_details\_jp.md](ASFRV32I_details_jp.md) です。
 
 ## ライセンス
   ```
@@ -222,6 +222,6 @@ hex形式にしたものとコンパイル後に逆アセンブルしたもの(*
 ### ASFRV32Iの設計と実装の詳細
 RISC-Vの仕様書を読み解きながらRV32Iに必要なマイクロアーキテクチャをどのように設計したか
 具体的なアプローチと、設計したブロックダイアグラムに基づきどのように実装したか実装の詳細を
-[ASFRV32I\_detail\_jp.md](ASFRV32I_detail_jp.md)で解説しています。
+[ASFRV32I\_details\_jp.md](ASFRV32I_details_jp.md)で解説しています。
 
 CPUの専門家でないのでおかしな点があれば指摘お願いします。
