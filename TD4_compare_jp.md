@@ -138,11 +138,11 @@ simpleTD4は25~34行目です。演算は加算のみなのでalu\_selに従いA
   assign alu_data = alu_out;
 ```
 
-ASFRV32Iは70~146行目です。
-70~72行目でレジスタからの読み込みをr\_data1とr\_data2に出力し、
-74~76行目でop1selに従いr\_data1かpcかを決めてs\_data1に出力しop2selに従い
+ASFRV32Iは70\~146行目です。
+70\~72行目でレジスタからの読み込みをr\_data1とr\_data2に出力し、
+74\~76行目でop1selに従いr\_data1かpcかを決めてs\_data1に出力しop2selに従い
 r\_data2かimmかを決めてs\_data2を出力し、
-78~110行目でaluconに従いs\_data1とs\_data2に対して加算や論理演算、
+78\~110行目でaluconに従いs\_data1とs\_data2に対して加算や論理演算、
 シフト演算などの算術論理演算を実行しalu\_dataに出力します。
 113~146行目は分岐処理で、分岐命令が入ったfunct3と通常命令か分岐命令か
 無条件ジャンプかを入れたpc\_selとレジスタから読み出したr\_data1とr\_data2から、
