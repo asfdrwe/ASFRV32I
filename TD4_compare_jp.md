@@ -230,9 +230,9 @@ r\_data2かimmかを決めてs\_data2を出力し、
 ### Memory
 simpleTD4は命令メモリからの読み込みのみでデータメモリを持たないので実装されていません。
 
-ASFRV32Iは148~159行目までがメモリからの読み込みです。メモリへの読み書き内容を示す
+ASFRV32Iは148\~159行目までがメモリからの読み込みです。メモリへの読み書き内容を示す
 funct3をmem\_valに入れ、メモリアドレスはalu\_data、メモリからのデータをmem\_dataに出力します。
-173~182行目でクロックごとにメモリへの書き込みを行います。mem\_rwが1'b1のときmem\_valに従い
+173\~182行目でクロックごとにメモリへの書き込みを行います。mem\_rwが1'b1のときmem\_valに従い
 alu\_dataで指定されたアドレスにr\_data2を書き込みます。
 ```
   wire [2:0] mem_val;
@@ -264,7 +264,7 @@ alu\_dataで指定されたアドレスにr\_data2を書き込みます。
 ```
 
 ### Write Back
-simpleTD4は36~39行目でload\_selからデータバスの出力先を決定しreg\_a、
+simpleTD4は36\~39行目でload\_selからデータバスの出力先を決定しreg\_a、
 reg\_b、reg\_out、 cflagを設定し、53\~56行目でクロックごとに
 書き込みます。
 ```
@@ -282,8 +282,8 @@ reg\_b、reg\_out、 cflagを設定し、53\~56行目でクロックごとに
       cflag  <= #1 ~nextcflag; // negative logic carry 
 ```
 
-ASFRV32Iは161~164行目でwb\_selに従いalu\_dataかmem\_dataかpc+4かどのデータを書き込むか決定し、
-184~185行目でrf\_wenが1'b1で書き込み先がゼロレジスタでないならクロックごとに書き込みます。
+ASFRV32Iは161\~164行目でwb\_selに従いalu\_dataかmem\_dataかpc+4かどのデータを書き込むか決定し、
+184\~185行目でrf\_wenが1'b1で書き込み先がゼロレジスタでないならクロックごとに書き込みます。
 ```
   wire [31:0] w_data;
   assign w_data = (wb_sel == 2'b00) ? alu_data : 
