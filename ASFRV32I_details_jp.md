@@ -361,6 +361,7 @@ imm[19:0]を12桁左シフトし32bit imm\_ext[31:0]に拡張する拡張回路
 - w\_addr\_lui
 - w\_data\_lui
 - rf\_wen\_lui
+
 4ポート読み込み3ポート書き込みのレジスタファイルが必要となります。
 
 r_addr1, r\_data1, r\_addr2, r\_data2, rf\_ren, w\_addr, w\_data, rf\_wenに
