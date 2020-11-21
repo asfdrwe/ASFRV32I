@@ -1,7 +1,7 @@
 # ASFRV32Iの設計と実装
 
 ## はじめに
-2020年現在RISC-Vが注目を浴びています。200行未満のVerilogで2bit基本命令
+2020年現在RISC-Vが注目を浴びています。200行未満のVerilogで32bit基本命令
 [RISC-V Unpriviledged ISA 20191213](https://riscv.org//wp-content/uploads/2019/12/riscv-spec-20191213.pdf)
 準拠のCPUを実装しました。RISC-VのCPUを実装したいと考えている人に向けて、
 RV32Iの仕様からどのようにマイクロアーキテクチャーを設計しHDLで実装するかに
