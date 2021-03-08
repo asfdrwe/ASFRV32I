@@ -12,7 +12,7 @@ module RV32I(input wire clock, input wire reset_n, output wire [31:0] pc_out, ou
   assign opcode = {mem[pc + 3], mem[pc + 2], mem[pc + 1], mem[pc]};
   assign op_out = opcode; // for DEBUG
 
-  wire [5:0] r_addr1, r_addr2, w_addr;
+  wire [4:0] r_addr1, r_addr2, w_addr;
   wire [31:0] imm;
   wire [3:0] alucon;
   wire [2:0] funct3;
